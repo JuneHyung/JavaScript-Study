@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 이해하기</title>
+</head>
+<body>
+    <div id="div1">hello DOM</div>
+    <ul>
+        <li>list item1</li>
+        <li>list item2</li>
+    </ul>
+    <script>
+        const div1E1 = document.getElementById('div1');
+        console.log(div1E1.innerHTML); // hello DOM
+
+        console.log(div1E1.nodeType); // 1
+        console.log(div1E1.nodeType === Node.ELEMENT_NODE); // true
+
+        console.log(div1E1.constructor); // ƒ HTMLDivElement() { [native code] }
+        console.log(div1E1 instanceof HTMLDivElement); // true
+        console.log(div1E1 instanceof HTMLElement); // true
+        console.log(div1E1 instanceof Element); // true
+        console.log(div1E1 instanceof Node); // true
+        console.log(Element.prototype) // Element
+        console.log(div1E1.tagName); // DIV
+
+        const divE12 = document.querySelector('#div1');
+        console.log(divE12.innerHTML); // hello DOM
+
+        const liEls = document.querySelectorAll('ul li');
+        console.log(liEls.item(0).innerHTML); // list item1
+        console.log(liEls.item(1).textContent); // list item2
+
+    </script>
+</body>
+</html>
