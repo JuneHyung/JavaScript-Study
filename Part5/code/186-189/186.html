@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>할 일 앱 만들기 예제</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <script src="186_model.js"></script>
+    <script>
+        const todos = new TodoManager();
+        todos.addTodo('공부하기');
+        todos.addTodo('운동하기');
+        console.log(todos.getList()); // (2) [Todo, Todo]
+        console.log(todos.leftTodoCount); // 2
+        todos.getList()[0].toggle();
+        console.log(todos.leftTodoCount); // 1
+    </script>
+</body>
+</html>
